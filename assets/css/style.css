@@ -1,0 +1,21 @@
+*, *::before, *::after {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+
+header {
+    text-align: center;
+}
+
+
+.current, .future {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.current section, .future section {
+    display: grid;
+
+}
