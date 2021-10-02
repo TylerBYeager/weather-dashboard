@@ -9,13 +9,3 @@ header {
 }
 
 
-.current, .future {
-    display: flex;
-    justify-content: flex-end;
-}
-
-
-.current section, .future section {
-    display: grid;
-
-}
