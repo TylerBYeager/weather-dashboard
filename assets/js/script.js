@@ -16,9 +16,9 @@
 //when functionality is completed begin working on styling. 
 
 
-var requestGeo = "http://api.openweathermap.org/geo/1.0/direct?q=Oakland,CA&limit=5&appid=00471da76e321693dd8116e27589ccf9";
+var requestGeo;
 var requestOneCall;
-var requestCity = document.getElementById("city-input").value;
+var requestCity;
 var addCity = document.getElementById('add-city');
 
 
@@ -84,7 +84,11 @@ function getOneCall(lat, long, cityName) {
 
    $("#add-city").on("click", function(event) {
        event.preventDefault();
-       getApiLatLon();
+       var requestCity = document.getElementById("city-input").value;
+       var requestGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + requestCity + "&limit=5&appid=00471da76e321693dd8116e27589ccf9";
+       console.log(requestCity);
+       console.log(requestGeo);
+       getApiLatLon(requestCity, requestGeo);
    })
     
     
