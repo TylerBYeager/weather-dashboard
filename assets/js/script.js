@@ -16,15 +16,16 @@
 //when functionality is completed begin working on styling. 
 
 
-var requestGeo;
-var requestOneCall;
-var requestCity;
+//var requestGeo;
+//var requestOneCall;
+//var requestCity;
 var addCity = document.getElementById('add-city');
+var listCities = [];
 
 
 
 
-function getApiLatLon() {
+function getApiLatLon(requestCity, requestGeo) {
     fetch(requestGeo) 
     .then(function(response) {
 
@@ -45,7 +46,7 @@ function getApiLatLon() {
         }
     });
 }
-getApiLatLon();
+
 
 
 function getOneCall(lat, long, cityName) {
@@ -72,24 +73,25 @@ function getOneCall(lat, long, cityName) {
 
         var trueDate = moment.unix(unixDate).format("MM/DD/YYYY");//convert unix into modern timestamp
         //console.log(trueDate);
-
-
-
-
-
         console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
         
+
+
+
+
+
+
+
     });
-
-
-   $("#add-city").on("click", function(event) {
-       event.preventDefault();
-       var requestCity = document.getElementById("city-input").value;
-       var requestGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + requestCity + "&limit=5&appid=00471da76e321693dd8116e27589ccf9";
-       console.log(requestCity);
-       console.log(requestGeo);
-       getApiLatLon(requestCity, requestGeo);
-   })
-    
-    
 }
+
+
+
+$("#add-city").on("click", function(event) {
+    event.preventDefault();
+    var requestCity = document.getElementById("city-input").value;
+    var requestGeo = "http://api.openweathermap.org/geo/1.0/direct?q=" + requestCity + "&limit=5&appid=00471da76e321693dd8116e27589ccf9";
+    //console.log(requestCity);
+    //console.log(requestGeo);
+    getApiLatLon(requestCity, requestGeo);
+});
