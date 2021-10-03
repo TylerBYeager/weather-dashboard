@@ -51,7 +51,7 @@ function getOneCall(lat, long, cityName) {
     console.log(long);
     console.log(cityName);
 
-    var requestOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly&appid=00471da76e321693dd8116e27589ccf9`
+    var requestOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&exclude=minutely,hourly&appid=00471da76e321693dd8116e27589ccf9`
 
     console.log(requestOneCall); //successfully retrieving information for Oakland, CA
     fetch (requestOneCall)
@@ -60,11 +60,21 @@ function getOneCall(lat, long, cityName) {
         return response.json();
     }).then(function(data) {
         console.log(data);
-        
 
-        for (var a = 0; a < data.length; a++) {
-            console.log(data[i].current.dt);
-        }
+        console.log(data.current.dt)
+        console.log(data.current.weather[0].description);
+        console.log(data.current.temp);    //success on getting all needed information for daily.
+        console.log(data.current.humidity);
+        console.log(data.current.wind_speed);
+        console.log(data.current.uvi);
+
+        var date = data.current.dt;
+        var weatherDescr = data.current.weather[0].description;
+        var currTemp = data.current.temp;
+        var humidity = data.current.humidity;
+        var speed = data.current.wind_speed;
+        var uvIndex = data.current.uvi;
+        
     })
     
     
