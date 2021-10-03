@@ -1,6 +1,6 @@
 //use a fetch or ajax call to get lat and long information.
 //check to make sure that you are receieving information
-//run through the function and asign lat and long variables to be passed to another function
+//run through the function and assign lat and long variables to be passed to another function
 //create another function using the one call weather api
 //through this function implement the variables of lat and long to get information on a city
 //create a variable for input so that user input for a city gets matched in and outputs the correct information. 
@@ -18,6 +18,8 @@
 
 var requestGeo = "http://api.openweathermap.org/geo/1.0/direct?q=Oakland,CA&limit=5&appid=00471da76e321693dd8116e27589ccf9";
 var requestOneCall;
+var requestCity = document.getElementById("city-input").value;
+var addCity = document.getElementById('add-city');
 
 
 
@@ -77,7 +79,13 @@ function getOneCall(lat, long, cityName) {
 
         console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
         
-    })
+    });
+
+
+   $("#add-city").on("click", function(event) {
+       event.preventDefault();
+       getApiLatLon();
+   })
     
     
 }
