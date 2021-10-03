@@ -61,19 +61,21 @@ function getOneCall(lat, long, cityName) {
     }).then(function(data) {
         console.log(data);
 
-        console.log(data.current.dt)
-        console.log(data.current.weather[0].description);
-        console.log(data.current.temp);    //success on getting all needed information for daily.
-        console.log(data.current.humidity);
-        console.log(data.current.wind_speed);
-        console.log(data.current.uvi);
-
-        var date = data.current.dt;
+        var unixDate = data.current.dt;
         var weatherDescr = data.current.weather[0].description;
         var currTemp = data.current.temp;
         var humidity = data.current.humidity;
         var speed = data.current.wind_speed;
         var uvIndex = data.current.uvi;
+
+        var trueDate = moment.unix(unixDate).format("MM/DD/YYYY");//convert unix into modern timestamp
+        //console.log(trueDate);
+
+
+
+
+
+        console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
         
     })
     
