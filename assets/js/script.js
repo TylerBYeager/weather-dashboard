@@ -16,17 +16,15 @@
 //when functionality is completed begin working on styling. 
 
 
-var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=Oakland,CA&limit=5&appid=00471da76e321693dd8116e27589ccf9";
-
-
+var requestGeo = "http://api.openweathermap.org/geo/1.0/direct?q=Oakland,CA&limit=5&appid=00471da76e321693dd8116e27589ccf9";
+var requestOneCall;
 
 
 
 
 function getApiLatLon() {
-    fetch(requestUrl) 
+    fetch(requestGeo) 
     .then(function(response) {
-        console.log(response);
 
         return response.json();
 
@@ -35,12 +33,37 @@ function getApiLatLon() {
         for (var i = 0; i < data.length; i++) {
             //console.log(data[i].lat);//confirming that I am receiving the correct infomration
             //console.log(data[i].lon);
-            var latitude = data[i].lat;
-            var longitude = data[i].lon;
+            var lat = data[i].lat;
+            var long = data[i].lon;
+            var cityName = data[i].name;
 
-            console.log(latitude);//placed lat and long in variables
-            console.log(longitude);//success
+            //console.log(lat);//placed lat and long in variables
+            //console.log(long);//success
+            getOneCall(lat, long, cityName)
         }
     });
 }
 getApiLatLon();
+
+
+function getOneCall(lat, long, cityName) {
+    console.log(lat);//successfully passed lat and long to another function
+    console.log(long);
+    console.log(cityName);
+
+    var requestOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly&appid=00471da76e321693dd8116e27589ccf9`
+
+    console.log(requestOneCall); //successfully retrieving information for Oakland, CA
+    fetch (requestOneCall)
+    .then(function(response) {
+        
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+        for (var a = 0; a < data.length; a++) {
+            console.log(data[i].current.dt);
+        }
+    })
+    
+    
+}
