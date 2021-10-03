@@ -60,6 +60,8 @@ function getOneCall(lat, long, cityName) {
         return response.json();
     }).then(function(data) {
         console.log(data);
+        
+
         for (var a = 0; a < data.length; a++) {
             console.log(data[i].current.dt);
         }
