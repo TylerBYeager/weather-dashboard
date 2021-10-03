@@ -16,3 +16,31 @@
 //when functionality is completed begin working on styling. 
 
 
+var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=Oakland,CA&limit=5&appid=00471da76e321693dd8116e27589ccf9";
+
+
+
+
+
+
+function getApiLatLon() {
+    fetch(requestUrl) 
+    .then(function(response) {
+        console.log(response);
+
+        return response.json();
+
+    }).then(function(data) {
+        console.log(data);//returning an array of information for just Oakland, CA
+        for (var i = 0; i < data.length; i++) {
+            //console.log(data[i].lat);//confirming that I am receiving the correct infomration
+            //console.log(data[i].lon);
+            var latitude = data[i].lat;
+            var longitude = data[i].lon;
+
+            console.log(latitude);//placed lat and long in variables
+            console.log(longitude);//success
+        }
+    });
+}
+getApiLatLon();
