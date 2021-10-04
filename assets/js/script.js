@@ -86,18 +86,52 @@ function getOneCall(lat, long, cityName) {
 
 
         //five day variables
-        //tomorrow
-        console.log(data.daily[0].dt);
-        console.log(data.daily[0].weather[0].main);
-        console.log(data.daily[0].temp.min);
-        console.log(data.daily[0].temp.max);
-        console.log(data.daily[0].humidity);
-        console.log(data.daily[0].wind_speed);
-        console.log(data.daily[0].uvi);
+        //tomorrow - day1
+        var date1 = data.daily[0].dt;
+        var wea1 = data.daily[0].weather[0].main;
+        var tempMin1 = data.daily[0].temp.min;
+        var tempMax1 = data.daily[0].temp.max;
+        var hum1 = data.daily[0].humidity;
+        var wspeed1 = data.daily[0].wind_speed;
+        var uvi1 = data.daily[0].uvi;
 
         
-        
 
+        //day 2
+        console.log(data.daily[1].dt);
+        console.log(data.daily[1].weather[0].main);
+        console.log(data.daily[1].temp.min);
+        console.log(data.daily[1].temp.max);
+        console.log(data.daily[1].humidity);
+        console.log(data.daily[1].wind_speed);
+        console.log(data.daily[1].uvi);
+
+        //day 3
+        console.log(data.daily[2].dt);
+        console.log(data.daily[2].weather[0].main);
+        console.log(data.daily[2].temp.min);
+        console.log(data.daily[2].temp.max);
+        console.log(data.daily[2].humidity);
+        console.log(data.daily[2].wind_speed);
+        console.log(data.daily[2].uvi);
+
+        //day 4
+        console.log(data.daily[3].dt);
+        console.log(data.daily[3].weather[0].main);
+        console.log(data.daily[3].temp.min);
+        console.log(data.daily[3].temp.max);
+        console.log(data.daily[3].humidity);
+        console.log(data.daily[3].wind_speed);
+        console.log(data.daily[3].uvi);
+
+        //day 5
+        console.log(data.daily[4].dt);
+        console.log(data.daily[4].weather[0].main);
+        console.log(data.daily[4].temp.min);
+        console.log(data.daily[4].temp.max);
+        console.log(data.daily[4].humidity);
+        console.log(data.daily[4].wind_speed);
+        console.log(data.daily[4].uvi);
 
 
 
