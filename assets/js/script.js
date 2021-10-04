@@ -145,7 +145,7 @@ function getOneCall(lat, long, cityName) {
 
         appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, trueDate1, trueDate2, trueDate3, trueDate4, trueDate5, wea1, wea2, wea3, wea4, wea5, tempMin1,
              tempMin2, tempMin3, tempMin4, tempMin5, tempMax1, tempMax2, tempMax3, tempMax4, tempMax5, hum1, hum2, hum3, hum4, hum5, wspeed1, wspeed2, wspeed3,
-              wspeed4, wspeed5, uvi1, uvi2, uvi3, uvi4, uvi5);
+              wspeed4, wspeed5, uvi1, uvi2, uvi3, uvi4, uvi5,)
 
 
 
@@ -166,11 +166,29 @@ $("#add-city").on("click", function(event) {
     getApiLatLon(requestCity, requestGeo);
     localStorage.setItem("city-name", requestCity); //save user input in local storage
     
+    var recentCity = document.getElementById('recent');
+    
+    var pastCities = document.createElement("button");
+    var storeCity = document.createTextNode(requestCity);
+    pastCities.appendChild(storeCity);
+    recentCity.appendChild(pastCities);
+
+
+    $("button").on("click", function(event) {
+        event.preventDefault();
+        getApiLatLon(requestCity, requestGeo);
+    });
 });
+
+
+
+
+
 
 function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, trueDate1, trueDate2, trueDate3, trueDate4, trueDate5, wea1, wea2, wea3, wea4, wea5, tempMin1,
     tempMin2, tempMin3, tempMin4, tempMin5, tempMax1, tempMax2, tempMax3, tempMax4, tempMax5, hum1, hum2, hum3, hum4, hum5, wspeed1, wspeed2, wspeed3,
      wspeed4, wspeed5, uvi1, uvi2, uvi3, uvi4, uvi5) {
+
     var tDate = document.createTextNode(trueDate);
     var wDes = document.createTextNode(weatherDescr);
     var temp = document.createTextNode(currTemp);
@@ -189,8 +207,9 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, 
     cHum.appendChild(humi);
     cSpeed.appendChild(wSpd);
     cUvI.appendChild(uIndex);
-//appended weather information to html page
-//first future forecast
+//appended weather information to html page ^
+
+//first future forecast 
     var listMake = document.createElement("ul");
     var lMake = document.createElement("li");
     var lMake2 = document.createElement("li");
@@ -225,7 +244,7 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, 
     listMake.appendChild(lMake7);
 
 //second future forecast
-var listMake2 = document.createElement("ul");
+    var listMake2 = document.createElement("ul");
     var lMake = document.createElement("li");
     var lMake2 = document.createElement("li");
     var lMake3 = document.createElement("li");
@@ -259,7 +278,7 @@ var listMake2 = document.createElement("ul");
     listMake2.appendChild(lMake7);
 
 //third day forecast
-var listMake3 = document.createElement("ul");
+    var listMake3 = document.createElement("ul");
     var lMake = document.createElement("li");
     var lMake2 = document.createElement("li");
     var lMake3 = document.createElement("li");
@@ -293,7 +312,7 @@ var listMake3 = document.createElement("ul");
     listMake3.appendChild(lMake7);
 
 //fourth day forecast
-var listMake4 = document.createElement("ul");
+    var listMake4 = document.createElement("ul");
     var lMake = document.createElement("li");
     var lMake2 = document.createElement("li");
     var lMake3 = document.createElement("li");
@@ -327,7 +346,7 @@ var listMake4 = document.createElement("ul");
     listMake4.appendChild(lMake7);
 
 //fifth day forecast
-var listMake5 = document.createElement("ul");
+    var listMake5 = document.createElement("ul");
     var lMake = document.createElement("li");
     var lMake2 = document.createElement("li");
     var lMake3 = document.createElement("li");
@@ -366,10 +385,11 @@ var listMake5 = document.createElement("ul");
     var addFuture3 = document.getElementById('future3');
     var addFuture4 = document.getElementById('future4');
     var addFuture5 = document.getElementById('future5');
+    
 
     addFuture.innerHTML = "";
     addFuture2.innerHTML = "";
-    addFuture3.innerHTML = "";//reset the future outlook spaces
+    addFuture3.innerHTML = "";//reset the future forecast spaces
     addFuture4.innerHTML = "";
     addFuture5.innerHTML = "";
 
@@ -381,6 +401,5 @@ var listMake5 = document.createElement("ul");
 
 
     
-
 
 }

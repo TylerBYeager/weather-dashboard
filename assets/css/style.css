@@ -12,7 +12,14 @@ h4 {
     text-align: center;
 }
 
+button {
+    background-color: transparent;
+    border-radius: 10px;
+}
 
+button:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
 .row {
     border: 3px solid red;
