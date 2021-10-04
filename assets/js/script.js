@@ -164,6 +164,7 @@ $("#add-city").on("click", function(event) {
     //console.log(requestCity);
     //console.log(requestGeo);
     getApiLatLon(requestCity, requestGeo);
+    
 });
 
 function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, trueDate1, trueDate2, trueDate3, trueDate4, trueDate5, wea1, wea2, wea3, wea4, wea5, tempMin1,
@@ -364,6 +365,13 @@ var listMake5 = document.createElement("ul");
     var addFuture3 = document.getElementById('future3');
     var addFuture4 = document.getElementById('future4');
     var addFuture5 = document.getElementById('future5');
+
+    addFuture.innerHTML = "";
+    addFuture2.innerHTML = "";
+    addFuture3.innerHTML = "";//reset the future outlook spaces
+    addFuture4.innerHTML = "";
+    addFuture5.innerHTML = "";
+
     addFuture.appendChild(listMake);
     addFuture2.appendChild(listMake2);
     addFuture3.appendChild(listMake3);
@@ -371,7 +379,7 @@ var listMake5 = document.createElement("ul");
     addFuture5.appendChild(listMake5);
 
 
-
+    
 
 
 }
