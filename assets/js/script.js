@@ -71,7 +71,7 @@ function getOneCall(lat, long, cityName) {
         console.log(data);
 
         var unixDate = data.current.dt;
-        var weatherDescr = data.current.weather[0].main;
+        var weatherDescr = data.current.weather[0].main + " is the current weather condition";
         var currTemp = data.current.temp + " Degrees Fahrenheit";
         var humidity = data.current.humidity + " %";
         var speed = data.current.wind_speed + " mph";
@@ -82,6 +82,32 @@ function getOneCall(lat, long, cityName) {
         console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
         
         
+
+
+
+        //five day variables
+        //tomorrow
+        console.log(data.daily[0].dt);
+        console.log(data.daily[0].weather[0].main);
+        console.log(data.daily[0].temp.min);
+        console.log(data.daily[0].temp.max);
+        console.log(data.daily[0].humidity);
+        console.log(data.daily[0].wind_speed);
+        console.log(data.daily[0].uvi);
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
 
         appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex)
 
@@ -125,6 +151,7 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex) 
     cUvI.appendChild(uIndex);
 //appended weather information to html page
     
+
         
         
 }
