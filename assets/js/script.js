@@ -164,6 +164,7 @@ $("#add-city").on("click", function(event) {
     //console.log(requestCity);
     //console.log(requestGeo);
     getApiLatLon(requestCity, requestGeo);
+    localStorage.setItem("city-name", requestCity); //save user input in local storage
     
 });
 
