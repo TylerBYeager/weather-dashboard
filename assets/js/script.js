@@ -87,63 +87,71 @@ function getOneCall(lat, long, cityName) {
 
         //five day variables
         //tomorrow - day1
-        var date1 = data.daily[0].dt;
-        var wea1 = data.daily[0].weather[0].main;
-        var tempMin1 = data.daily[0].temp.min;
-        var tempMax1 = data.daily[0].temp.max;
-        var hum1 = data.daily[0].humidity;
-        var wspeed1 = data.daily[0].wind_speed;
-        var uvi1 = data.daily[0].uvi;
+        var date1 = data.daily[1].dt;
+        var wea1 = data.daily[1].weather[0].main;
+        var tempMin1 = data.daily[1].temp.min;
+        var tempMax1 = data.daily[1].temp.max;
+        var hum1 = data.daily[1].humidity;
+        var wspeed1 = data.daily[1].wind_speed;
+        var uvi1 = data.daily[1].uvi;
+        
 
+        var trueDate1 = moment.unix(date1).format("MM/DD/YYYY");
         
 
         //day 2
-        var date2 = data.daily[1].dt;
-        var wea2 = data.daily[1].weather[0].main;
-        var tempMin2 = data.daily[1].temp.min;
-        var tempMax2 = data.daily[1].temp.max;
-        var hum2 = data.daily[1].humidity;
-        var wspeed2 = data.daily[1].wind_speed;
-        var uvi2 = data.daily[1].uvi;
+        var date2 = data.daily[2].dt;
+        var wea2 = data.daily[2].weather[0].main;
+        var tempMin2 = data.daily[2].temp.min;
+        var tempMax2 = data.daily[2].temp.max;
+        var hum2 = data.daily[2].humidity;
+        var wspeed2 = data.daily[2].wind_speed;
+        var uvi2 = data.daily[2].uvi;
+
+        var trueDate2 = moment.unix(date2).format("MM/DD/YYYY");
 
         //day 3
-        var date3 = data.daily[2].dt;
-        var wea3 = data.daily[2].weather[0].main;
-        var tempMin3 = data.daily[2].temp.min;
-        var tempMax3 = data.daily[2].temp.max;
-        var hum3 = data.daily[2].humidity;
-        var wspeed3 = data.daily[2].wind_speed;
-        var uvi3 = data.daily[2].uvi;
+        var date3 = data.daily[3].dt;
+        var wea3 = data.daily[3].weather[0].main;
+        var tempMin3 = data.daily[3].temp.min;
+        var tempMax3 = data.daily[3].temp.max;
+        var hum3 = data.daily[3].humidity;
+        var wspeed3 = data.daily[3].wind_speed;
+        var uvi3 = data.daily[3].uvi;
+
+        var trueDate3 = moment.unix(date3).format("MM/DD/YYYY");
 
         //day 4
-        var date4 = data.daily[3].dt;
-        var wea4 = data.daily[3].weather[0].main;
-        var tempMin4 = data.daily[3].temp.min;
-        var tempMax4 = data.daily[3].temp.max;
-        var hum4 = data.daily[3].humidity;
-        var wspeed4 = data.daily[3].wind_speed;
-        var uvi4 = data.daily[3].uvi;
+        var date4 = data.daily[4].dt;
+        var wea4 = data.daily[4].weather[0].main;
+        var tempMin4 = data.daily[4].temp.min;
+        var tempMax4 = data.daily[4].temp.max;
+        var hum4 = data.daily[4].humidity;
+        var wspeed4 = data.daily[4].wind_speed;
+        var uvi4 = data.daily[4].uvi;
+
+        var trueDate4 = moment.unix(date4).format("MM/DD/YYYY");
 
         //day 5
-        var date5 = data.daily[4].dt;
-        var wea5 = data.daily[4].weather[0].main;
-        var tempMin5 = data.daily[4].temp.min;
-        var tempMax5 = data.daily[4].temp.max;
-        var hum5 = data.daily[4].humidity;
-        var wspeed5 = data.daily[4].wind_speed;
-        var uvi5 = data.daily[4].uvi;
+        var date5 = data.daily[5].dt;
+        var wea5 = data.daily[5].weather[0].main;
+        var tempMin5 = data.daily[5].temp.min;
+        var tempMax5 = data.daily[5].temp.max;
+        var hum5 = data.daily[5].humidity;
+        var wspeed5 = data.daily[5].wind_speed;
+        var uvi5 = data.daily[5].uvi;
 
+        var trueDate5 = moment.unix(date5).format("MM/DD/YYYY");
 
         //all variables for future dates
+        //created variables for unix date conversions into modern
 
 
 
 
-
-
-
-
-        appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex)
+        appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, trueDate1, trueDate2, trueDate3, trueDate4, trueDate5, wea1, wea2, wea3, wea4, wea5, tempMin1,
+             tempMin2, tempMin3, tempMin4, tempMin5, tempMax1, tempMax2, tempMax3, tempMax4, tempMax5, hum1, hum2, hum3, hum4, hum5, wspeed1, wspeed2, wspeed3,
+              wspeed4, wspeed5, uvi1, uvi2, uvi3, uvi4, uvi5);
 
 
 
@@ -164,7 +172,9 @@ $("#add-city").on("click", function(event) {
     getApiLatLon(requestCity, requestGeo);
 });
 
-function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex) {
+function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, trueDate1, trueDate2, trueDate3, trueDate4, trueDate5, wea1, wea2, wea3, wea4, wea5, tempMin1,
+    tempMin2, tempMin3, tempMin4, tempMin5, tempMax1, tempMax2, tempMax3, tempMax4, tempMax5, hum1, hum2, hum3, hum4, hum5, wspeed1, wspeed2, wspeed3,
+     wspeed4, wspeed5, uvi1, uvi2, uvi3, uvi4, uvi5) {
     var tDate = document.createTextNode(trueDate);
     var wDes = document.createTextNode(weatherDescr);
     var temp = document.createTextNode(currTemp);
@@ -184,8 +194,5 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex) 
     cSpeed.appendChild(wSpd);
     cUvI.appendChild(uIndex);
 //appended weather information to html page
-    
-
-        
-        
+       
 }
