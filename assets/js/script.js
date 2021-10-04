@@ -188,7 +188,7 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, 
     cSpeed.appendChild(wSpd);
     cUvI.appendChild(uIndex);
 //appended weather information to html page
-
+//first future forecast
     var listMake = document.createElement("ul");
     var lMake = document.createElement("li");
     var lMake2 = document.createElement("li");
@@ -200,13 +200,70 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, 
 
     var tDate1 = document.createTextNode(trueDate1);
     var wDes1 = document.createTextNode(wea1);
+    var tempm1 = document.createTextNode(tempMin1);
+    var tempM1 = document.createTextNode(tempMax1);
+    var humi1 = document.createTextNode(hum1);
+    var winSp1 = document.createTextNode(wspeed1);
+    var uvin1 = document.createTextNode(uvi1);
 
     lMake.appendChild(tDate1);
     lMake2.appendChild(wDes1);
+    lMake3.appendChild(tempm1);
+    lMake4.appendChild(tempM1);
+    lMake5.appendChild(humi1);
+    lMake6.appendChild(winSp1);
+    lMake7.appendChild(uvin1);
+
     listMake.appendChild(lMake);
+    listMake.appendChild(lMake2);
+    listMake.appendChild(lMake3);
+    listMake.appendChild(lMake4);
+    listMake.appendChild(lMake5);
+    listMake.appendChild(lMake6);
+    listMake.appendChild(lMake7);
+
+//second future forecast
+var listMake2 = document.createElement("ul");
+    var lMake = document.createElement("li");
+    var lMake2 = document.createElement("li");
+    var lMake3 = document.createElement("li");
+    var lMake4 = document.createElement("li");
+    var lMake5 = document.createElement("li");
+    var lMake6 = document.createElement("li");
+    var lMake7 = document.createElement("li");
+
+    var tDate2 = document.createTextNode(trueDate2);
+    var wDes2 = document.createTextNode(wea2);
+    var tempm2 = document.createTextNode(tempMin2);
+    var tempM2 = document.createTextNode(tempMax2);
+    var humi2 = document.createTextNode(hum2);
+    var winSp2 = document.createTextNode(wspeed2);
+    var uvin2 = document.createTextNode(uvi2);
+
+    lMake.appendChild(tDate2);
+    lMake2.appendChild(wDes2);
+    lMake3.appendChild(tempm2);
+    lMake4.appendChild(tempM2);
+    lMake5.appendChild(humi2);
+    lMake6.appendChild(winSp2);
+    lMake7.appendChild(uvin2);
+
+    listMake2.appendChild(lMake);
+    listMake2.appendChild(lMake2);
+    listMake2.appendChild(lMake3);
+    listMake2.appendChild(lMake4);
+    listMake2.appendChild(lMake5);
+    listMake2.appendChild(lMake6);
+    listMake2.appendChild(lMake7);
+
+//third day forecast
+
+
 
     var addFuture = document.getElementById('future');
-    addFuture.appendChild(cardMake);
+    var addFuture2 = document.getElementById('future2');
+    addFuture.appendChild(listMake);
+    addFuture2.appendChild(listMake2);
 
 
 
