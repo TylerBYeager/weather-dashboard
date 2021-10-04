@@ -20,6 +20,7 @@
 //var requestOneCall;
 //var requestCity;
 var addCity = document.getElementById('add-city');
+var cDate = document.getElementById('cDate');
 var listCities = [];
 
 
@@ -75,7 +76,7 @@ function getOneCall(lat, long, cityName) {
         //console.log(trueDate);
         console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
         
-
+        
 
         appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex)
 
@@ -99,8 +100,9 @@ $("#add-city").on("click", function(event) {
 });
 
 function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex) {
-    var pDate = document.createNewElement("div");
+    var pDate = document.createElement("p");
     var pContent = document.createTextNode(trueDate);
+    cDate.innerHTML="";
         pDate.appendChild(pContent);
         console.log(pDate);
         
