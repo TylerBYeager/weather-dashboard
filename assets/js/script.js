@@ -79,7 +79,7 @@ function getOneCall(lat, long, cityName) {
 
         var trueDate = moment.unix(unixDate).format("MM/DD/YYYY");//convert unix into modern timestamp
         //console.log(trueDate);
-        console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
+        //console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
         
         
 
@@ -98,43 +98,43 @@ function getOneCall(lat, long, cityName) {
         
 
         //day 2
-        console.log(data.daily[1].dt);
-        console.log(data.daily[1].weather[0].main);
-        console.log(data.daily[1].temp.min);
-        console.log(data.daily[1].temp.max);
-        console.log(data.daily[1].humidity);
-        console.log(data.daily[1].wind_speed);
-        console.log(data.daily[1].uvi);
+        var date2 = data.daily[1].dt;
+        var wea2 = data.daily[1].weather[0].main;
+        var tempMin2 = data.daily[1].temp.min;
+        var tempMax2 = data.daily[1].temp.max;
+        var hum2 = data.daily[1].humidity;
+        var wspeed2 = data.daily[1].wind_speed;
+        var uvi2 = data.daily[1].uvi;
 
         //day 3
-        console.log(data.daily[2].dt);
-        console.log(data.daily[2].weather[0].main);
-        console.log(data.daily[2].temp.min);
-        console.log(data.daily[2].temp.max);
-        console.log(data.daily[2].humidity);
-        console.log(data.daily[2].wind_speed);
-        console.log(data.daily[2].uvi);
+        var date3 = data.daily[2].dt;
+        var wea3 = data.daily[2].weather[0].main;
+        var tempMin3 = data.daily[2].temp.min;
+        var tempMax3 = data.daily[2].temp.max;
+        var hum3 = data.daily[2].humidity;
+        var wspeed3 = data.daily[2].wind_speed;
+        var uvi3 = data.daily[2].uvi;
 
         //day 4
-        console.log(data.daily[3].dt);
-        console.log(data.daily[3].weather[0].main);
-        console.log(data.daily[3].temp.min);
-        console.log(data.daily[3].temp.max);
-        console.log(data.daily[3].humidity);
-        console.log(data.daily[3].wind_speed);
-        console.log(data.daily[3].uvi);
+        var date4 = data.daily[3].dt;
+        var wea4 = data.daily[3].weather[0].main;
+        var tempMin4 = data.daily[3].temp.min;
+        var tempMax4 = data.daily[3].temp.max;
+        var hum4 = data.daily[3].humidity;
+        var wspeed4 = data.daily[3].wind_speed;
+        var uvi4 = data.daily[3].uvi;
 
         //day 5
-        console.log(data.daily[4].dt);
-        console.log(data.daily[4].weather[0].main);
-        console.log(data.daily[4].temp.min);
-        console.log(data.daily[4].temp.max);
-        console.log(data.daily[4].humidity);
-        console.log(data.daily[4].wind_speed);
-        console.log(data.daily[4].uvi);
+        var date5 = data.daily[4].dt;
+        var wea5 = data.daily[4].weather[0].main;
+        var tempMin5 = data.daily[4].temp.min;
+        var tempMax5 = data.daily[4].temp.max;
+        var hum5 = data.daily[4].humidity;
+        var wspeed5 = data.daily[4].wind_speed;
+        var uvi5 = data.daily[4].uvi;
 
 
-
+        //all variables for future dates
 
 
 
