@@ -77,11 +77,13 @@ function getOneCall(lat, long, cityName) {
         
 
 
+        appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex)
 
 
 
 
-
+        
+    
     });
 }
 
@@ -95,3 +97,11 @@ $("#add-city").on("click", function(event) {
     //console.log(requestGeo);
     getApiLatLon(requestCity, requestGeo);
 });
+
+function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex) {
+    var pDate = document.createNewElement("div");
+    var pContent = document.createTextNode(trueDate);
+        pDate.appendChild(pContent);
+        console.log(pDate);
+        
+}
