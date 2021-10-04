@@ -21,6 +21,11 @@
 //var requestCity;
 var addCity = document.getElementById('add-city');
 var cDate = document.getElementById('cDate');
+var cDes = document.getElementById("cDes");
+var cTemp = document.getElementById("cTemp");
+var cHum = document.getElementById("cHum");
+var cSpeed = document.getElementById("cSpeed");
+var cUvI = document.getElementById("cUvI");
 var listCities = [];
 
 
@@ -66,10 +71,10 @@ function getOneCall(lat, long, cityName) {
         console.log(data);
 
         var unixDate = data.current.dt;
-        var weatherDescr = data.current.weather[0].description;
-        var currTemp = data.current.temp;
-        var humidity = data.current.humidity;
-        var speed = data.current.wind_speed;
+        var weatherDescr = data.current.weather[0].main;
+        var currTemp = data.current.temp + " Degrees Fahrenheit";
+        var humidity = data.current.humidity + " %";
+        var speed = data.current.wind_speed + " mph";
         var uvIndex = data.current.uvi;
 
         var trueDate = moment.unix(unixDate).format("MM/DD/YYYY");//convert unix into modern timestamp
@@ -100,10 +105,26 @@ $("#add-city").on("click", function(event) {
 });
 
 function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex) {
-    var pDate = document.createElement("p");
-    var pContent = document.createTextNode(trueDate);
-    cDate.innerHTML="";
-        pDate.appendChild(pContent);
-        console.log(pDate);
+    var tDate = document.createTextNode(trueDate);
+    var wDes = document.createTextNode(weatherDescr);
+    var temp = document.createTextNode(currTemp);
+    var humi = document.createTextNode(humidity);
+    var wSpd = document.createTextNode(speed);
+    var uIndex = document.createTextNode(uvIndex); 
+    cDate.innerHTML = "";
+    cDes.innerHTML = "";
+    cTemp.innerHTML = "";
+    cHum.innerHTML = "";
+    cSpeed.innerHTML = "";
+    cUvI.innerHTML = "";
+    cDate.appendChild(tDate);
+    cDes.appendChild(wDes);
+    cTemp.appendChild(temp);
+    cHum.appendChild(humi);
+    cSpeed.appendChild(wSpd);
+    cUvI.appendChild(uIndex);
+//appended weather information to html page
+    
+        
         
 }
