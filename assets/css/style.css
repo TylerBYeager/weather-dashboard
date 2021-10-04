@@ -3,9 +3,18 @@
     
 }
 
-
 header {
     text-align: center;
+    background-color: slategray;
+}
+
+main {
+    background-color: lightskyblue;
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
 }
 
 h4 {
@@ -13,7 +22,7 @@ h4 {
 }
 
 button {
-    background-color: transparent;
+    background-color: #fff;
     border-radius: 10px;
 }
 
@@ -21,6 +30,11 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+ul {
+    background-color: #ccc;
+    border: 3px solid black;
+}
+
 .row {
-    border: 3px solid red;
+    border: 3px solid black;
 }

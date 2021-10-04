@@ -26,7 +26,8 @@ var cTemp = document.getElementById("cTemp");
 var cHum = document.getElementById("cHum");
 var cSpeed = document.getElementById("cSpeed");
 var cUvI = document.getElementById("cUvI");
-var listCities = [];
+
+//var listCities=localStorage.getItem("city-name", requestCity); //for retrieving from local storage
 
 
 function getApiLatLon(requestCity, requestGeo) {
