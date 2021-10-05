@@ -38,3 +38,16 @@ ul {
 .row {
     border: 3px solid black;
 }
+
+
+.low {
+    background-color: green;
+}
+
+.mid {
+    background-color: orange;
+}
+
+.high {
+    background-color: red;
+}
