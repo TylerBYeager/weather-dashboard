@@ -27,6 +27,7 @@ var cHum = document.getElementById("cHum");
 var cSpeed = document.getElementById("cSpeed");
 var cUvI = document.getElementById("cUvI");
 
+
 //var listCities=localStorage.getItem("city-name", requestCity); //for retrieving from local storage
 
 
@@ -77,7 +78,8 @@ function getOneCall(lat, long, cityName) {
 
         var trueDate = moment.unix(unixDate).format("MM/DD/YYYY");//convert unix into modern timestamp
         //console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
-        
+        var addfuture = document.getElementById('future');
+        addfuture.innerHTML = "";
     for (var i = 1; i < 6; i++) {
 
         var date1 = data.daily[i].dt;
@@ -126,69 +128,13 @@ function getOneCall(lat, long, cityName) {
 
     
     var addFuture = document.getElementById('future');
-    // addFuture.innerHTML = "";
+
     addFuture.appendChild(listMake);
     
     }
-
-
-        //five day variables
-        //tomorrow - day1
     
-        
-
-
-        //day 2
-       
-
-        //var trueDate2 = moment.unix(date2).format("MM/DD/YYYY");
-
-        //day 3
-        // var date3 = data.daily[3].dt;
-        // var wea3 = data.daily[3].weather[0].main;
-        // var tempMin3 = data.daily[3].temp.min;
-        // var tempMax3 = data.daily[3].temp.max;
-        // var hum3 = data.daily[3].humidity;
-        // var wspeed3 = data.daily[3].wind_speed;
-        // var uvi3 = data.daily[3].uvi;
-
-        //var trueDate3 = moment.unix(date3).format("MM/DD/YYYY");
-
-        //day 4
-        // var date4 = data.daily[4].dt;
-        // var wea4 = data.daily[4].weather[0].main;
-        // var tempMin4 = data.daily[4].temp.min;
-        // var tempMax4 = data.daily[4].temp.max;
-        // var hum4 = data.daily[4].humidity;
-        // var wspeed4 = data.daily[4].wind_speed;
-        // var uvi4 = data.daily[4].uvi;
-
-        // var trueDate4 = moment.unix(date4).format("MM/DD/YYYY");
-
-        // //day 5
-        // var date5 = data.daily[5].dt;
-        // var wea5 = data.daily[5].weather[0].main;
-        // var tempMin5 = data.daily[5].temp.min;
-        // var tempMax5 = data.daily[5].temp.max;
-        // var hum5 = data.daily[5].humidity;
-        // var wspeed5 = data.daily[5].wind_speed;
-        // var uvi5 = data.daily[5].uvi;
-
-        // var trueDate5 = moment.unix(date5).format("MM/DD/YYYY");
-
-        //all variables for future dates
-        //created variables for unix date conversions into modern
-
-
-
-
         appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, trueDate1, wea1, tempMin1, tempMax1, hum1,  wspeed1, uvi1)
-
-
-
-
-        
-    
+  
     });
 }
 
@@ -243,167 +189,6 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, 
     cSpeed.appendChild(wSpd);
     cUvI.appendChild(uIndex);
 //appended weather information to html page ^
-
-//for loop would probably be better for iterating through the information. Will edit later
-
-//first future forecast 
-    
-//second future forecast
-//     var listMake2 = document.createElement("ul");
-//     var lMake = document.createElement("li");
-//     var lMake2 = document.createElement("li");
-//     var lMake3 = document.createElement("li");
-//     var lMake4 = document.createElement("li");
-//     var lMake5 = document.createElement("li");
-//     var lMake6 = document.createElement("li");
-//     var lMake7 = document.createElement("li");
-
-//     var tDate2 = document.createTextNode(trueDate2);
-//     var wDes2 = document.createTextNode(wea2);
-//     var tempm2 = document.createTextNode(tempMin2);
-//     var tempM2 = document.createTextNode(tempMax2);
-//     var humi2 = document.createTextNode(hum2);
-//     var winSp2 = document.createTextNode(wspeed2);
-//     var uvin2 = document.createTextNode(uvi2);
-
-//     lMake.appendChild(tDate2);
-//     lMake2.appendChild(wDes2);
-//     lMake3.appendChild(tempm2);
-//     lMake4.appendChild(tempM2);
-//     lMake5.appendChild(humi2);
-//     lMake6.appendChild(winSp2);
-//     lMake7.appendChild(uvin2);
-
-//     listMake2.appendChild(lMake);
-//     listMake2.appendChild(lMake2);
-//     listMake2.appendChild(lMake3);
-//     listMake2.appendChild(lMake4);
-//     listMake2.appendChild(lMake5);
-//     listMake2.appendChild(lMake6);
-//     listMake2.appendChild(lMake7);
-
-// //third day forecast
-//     var listMake3 = document.createElement("ul");
-//     var lMake = document.createElement("li");
-//     var lMake2 = document.createElement("li");
-//     var lMake3 = document.createElement("li");
-//     var lMake4 = document.createElement("li");
-//     var lMake5 = document.createElement("li");
-//     var lMake6 = document.createElement("li");
-//     var lMake7 = document.createElement("li");
-
-//     var tDate3 = document.createTextNode(trueDate3);
-//     var wDes3 = document.createTextNode(wea3);
-//     var tempm3 = document.createTextNode(tempMin3);
-//     var tempM3 = document.createTextNode(tempMax3);
-//     var humi3 = document.createTextNode(hum3);
-//     var winSp3 = document.createTextNode(wspeed3);
-//     var uvin3 = document.createTextNode(uvi3);
-
-//     lMake.appendChild(tDate3);
-//     lMake2.appendChild(wDes3);
-//     lMake3.appendChild(tempm3);
-//     lMake4.appendChild(tempM3);
-//     lMake5.appendChild(humi3);
-//     lMake6.appendChild(winSp3);
-//     lMake7.appendChild(uvin3);
-
-//     listMake3.appendChild(lMake);
-//     listMake3.appendChild(lMake2);
-//     listMake3.appendChild(lMake3);
-//     listMake3.appendChild(lMake4);
-//     listMake3.appendChild(lMake5);
-//     listMake3.appendChild(lMake6);
-//     listMake3.appendChild(lMake7);
-
-// //fourth day forecast
-//     var listMake4 = document.createElement("ul");
-//     var lMake = document.createElement("li");
-//     var lMake2 = document.createElement("li");
-//     var lMake3 = document.createElement("li");
-//     var lMake4 = document.createElement("li");
-//     var lMake5 = document.createElement("li");
-//     var lMake6 = document.createElement("li");
-//     var lMake7 = document.createElement("li");
-
-//     var tDate4 = document.createTextNode(trueDate4);
-//     var wDes4 = document.createTextNode(wea4);
-//     var tempm4 = document.createTextNode(tempMin4);
-//     var tempM4 = document.createTextNode(tempMax4);
-//     var humi4 = document.createTextNode(hum4);
-//     var winSp4 = document.createTextNode(wspeed4);
-//     var uvin4 = document.createTextNode(uvi4);
-
-//     lMake.appendChild(tDate4);
-//     lMake2.appendChild(wDes4);
-//     lMake3.appendChild(tempm4);
-//     lMake4.appendChild(tempM4);
-//     lMake5.appendChild(humi4);
-//     lMake6.appendChild(winSp4);
-//     lMake7.appendChild(uvin4);
-
-//     listMake4.appendChild(lMake);
-//     listMake4.appendChild(lMake2);
-//     listMake4.appendChild(lMake3);
-//     listMake4.appendChild(lMake4);
-//     listMake4.appendChild(lMake5);
-//     listMake4.appendChild(lMake6);
-//     listMake4.appendChild(lMake7);
-
-// //fifth day forecast
-//     var listMake5 = document.createElement("ul");
-//     var lMake = document.createElement("li");
-//     var lMake2 = document.createElement("li");
-//     var lMake3 = document.createElement("li");
-//     var lMake4 = document.createElement("li");
-//     var lMake5 = document.createElement("li");
-//     var lMake6 = document.createElement("li");
-//     var lMake7 = document.createElement("li");
-
-//     var tDate5 = document.createTextNode(trueDate5);
-//     var wDes5 = document.createTextNode(wea5);
-//     var tempm5 = document.createTextNode(tempMin5);
-//     var tempM5 = document.createTextNode(tempMax5);
-//     var humi5 = document.createTextNode(hum5);
-//     var winSp5 = document.createTextNode(wspeed5);
-//     var uvin5 = document.createTextNode(uvi5);
-
-//     lMake.appendChild(tDate5);
-//     lMake2.appendChild(wDes5);
-//     lMake3.appendChild(tempm5);
-//     lMake4.appendChild(tempM5);
-//     lMake5.appendChild(humi5);
-//     lMake6.appendChild(winSp5);
-//     lMake7.appendChild(uvin5);
-
-//     listMake5.appendChild(lMake);
-//     listMake5.appendChild(lMake2);
-//     listMake5.appendChild(lMake3);
-//     listMake5.appendChild(lMake4);
-//     listMake5.appendChild(lMake5);
-//     listMake5.appendChild(lMake6);
-//     listMake5.appendChild(lMake7);
-
-//appending future weather
-    
-    // var addFuture2 = document.getElementById('future2');
-    // var addFuture3 = document.getElementById('future3');
-    // var addFuture4 = document.getElementById('future4');
-    // var addFuture5 = document.getElementById('future5');
-    
-
-    
-    // addFuture2.innerHTML = "";
-    // addFuture3.innerHTML = "";//reset the future forecast spaces
-    // addFuture4.innerHTML = "";
-    // addFuture5.innerHTML = "";
-
-    
-    // addFuture2.appendChild(listMake2);
-    // addFuture3.appendChild(listMake3);
-    // addFuture4.appendChild(listMake4);
-    // addFuture5.appendChild(listMake5);
-
   
 
 }
