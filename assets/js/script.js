@@ -77,7 +77,7 @@ function getOneCall(lat, long, cityName) {
 
         var trueDate = moment.unix(unixDate).format("MM/DD/YYYY");//convert unix into modern timestamp
         //console.log(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex);
-
+        
     for (var i = 1; i < 6; i++) {
 
         var date1 = data.daily[i].dt;
@@ -90,7 +90,47 @@ function getOneCall(lat, long, cityName) {
 
         var trueDate1 = moment.unix(date1).format("MM/DD/YYYY");
         console.log(trueDate1);
+        
+    var listMake = document.createElement("ul");
+    var lMake = document.createElement("li");
+    var lMake2 = document.createElement("li");
+    var lMake3 = document.createElement("li");
+    var lMake4 = document.createElement("li");
+    var lMake5 = document.createElement("li");
+    var lMake6 = document.createElement("li");
+    var lMake7 = document.createElement("li");
+
+    var tDate1 = document.createTextNode(trueDate1);
+    var wDes1 = document.createTextNode(wea1);
+    var tempm1 = document.createTextNode(tempMin1);
+    var tempM1 = document.createTextNode(tempMax1);
+    var humi1 = document.createTextNode(hum1);
+    var winSp1 = document.createTextNode(wspeed1);
+    var uvin1 = document.createTextNode(uvi1);
+
+    lMake.appendChild(tDate1);
+    lMake2.appendChild(wDes1);
+    lMake3.appendChild(tempm1);
+    lMake4.appendChild(tempM1);
+    lMake5.appendChild(humi1);
+    lMake6.appendChild(winSp1);
+    lMake7.appendChild(uvin1);
+
+    listMake.appendChild(lMake);
+    listMake.appendChild(lMake2);
+    listMake.appendChild(lMake3);
+    listMake.appendChild(lMake4);
+    listMake.appendChild(lMake5);
+    listMake.appendChild(lMake6);
+    listMake.appendChild(lMake7);
+
+    
+    var addFuture = document.getElementById('future');
+    // addFuture.innerHTML = "";
+    addFuture.appendChild(listMake);
+    
     }
+
 
         //five day variables
         //tomorrow - day1
@@ -207,39 +247,7 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, 
 //for loop would probably be better for iterating through the information. Will edit later
 
 //first future forecast 
-    var listMake = document.createElement("ul");
-    var lMake = document.createElement("li");
-    var lMake2 = document.createElement("li");
-    var lMake3 = document.createElement("li");
-    var lMake4 = document.createElement("li");
-    var lMake5 = document.createElement("li");
-    var lMake6 = document.createElement("li");
-    var lMake7 = document.createElement("li");
-
-    var tDate1 = document.createTextNode(trueDate1);
-    var wDes1 = document.createTextNode(wea1);
-    var tempm1 = document.createTextNode(tempMin1);
-    var tempM1 = document.createTextNode(tempMax1);
-    var humi1 = document.createTextNode(hum1);
-    var winSp1 = document.createTextNode(wspeed1);
-    var uvin1 = document.createTextNode(uvi1);
-
-    lMake.appendChild(tDate1);
-    lMake2.appendChild(wDes1);
-    lMake3.appendChild(tempm1);
-    lMake4.appendChild(tempM1);
-    lMake5.appendChild(humi1);
-    lMake6.appendChild(winSp1);
-    lMake7.appendChild(uvin1);
-
-    listMake.appendChild(lMake);
-    listMake.appendChild(lMake2);
-    listMake.appendChild(lMake3);
-    listMake.appendChild(lMake4);
-    listMake.appendChild(lMake5);
-    listMake.appendChild(lMake6);
-    listMake.appendChild(lMake7);
-
+    
 //second future forecast
 //     var listMake2 = document.createElement("ul");
 //     var lMake = document.createElement("li");
@@ -377,20 +385,20 @@ function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, 
 //     listMake5.appendChild(lMake7);
 
 //appending future weather
-    var addFuture = document.getElementById('future');
+    
     // var addFuture2 = document.getElementById('future2');
     // var addFuture3 = document.getElementById('future3');
     // var addFuture4 = document.getElementById('future4');
     // var addFuture5 = document.getElementById('future5');
     
 
-    addFuture.innerHTML = "";
+    
     // addFuture2.innerHTML = "";
     // addFuture3.innerHTML = "";//reset the future forecast spaces
     // addFuture4.innerHTML = "";
     // addFuture5.innerHTML = "";
 
-    addFuture.appendChild(listMake);
+    
     // addFuture2.appendChild(listMake2);
     // addFuture3.appendChild(listMake3);
     // addFuture4.appendChild(listMake4);
