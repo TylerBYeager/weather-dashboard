@@ -15,7 +15,8 @@ Things that I did not accomplish:
 1. Have not added the image icons for weather conditions though I see this as an easy thing to implement in the future.  
 2. I was unable to add in the color styling to the uv index though I plan to do so with an if conditional in the future.  
 ---
-!picture here
+![Snapshot](https://user-images.githubusercontent.com/89880190/136501617-d7c5415e-bf7b-4ebc-90f2-2e4ae2147d73.png)
+
 
 ## Code Snippets
 Here are few code snippets that I enjoyed coding and what they accomplished. This first snippet used the Fetch api call in conjunction with the Geocode API to retrieve latitude and longitude for a location. I was able to turn these into variables to be passed on to another function. 
