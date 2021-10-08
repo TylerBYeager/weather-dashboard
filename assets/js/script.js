@@ -91,7 +91,6 @@ function getOneCall(lat, long, cityName) {
         var uvi1 = data.daily[i].uvi;
 
         var trueDate1 = moment.unix(date1).format("MM/DD/YYYY");
-        console.log(trueDate1);
         
     var listMake = document.createElement("ul");
     var lMake = document.createElement("li");
@@ -162,10 +161,6 @@ $("#add-city").on("click", function(event) {
         getApiLatLon(requestCity, requestGeo);
     });
 });
-
-
-
-
 
 
 function appendPage(trueDate, weatherDescr, currTemp, humidity, speed, uvIndex, trueDate1, wea1, tempMin1, tempMax1, hum1, wspeed1, uvi1) {
