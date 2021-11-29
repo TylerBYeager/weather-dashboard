@@ -1,4 +1,4 @@
-# Work Day Scheduler
+# Weather Dashboard
 This is the sixth major project that I have worked on. Working on this project was a very educational in terms of using API calls to retrieve information from third party sources and using for loops to iterate through that information and turn it into a usable format. 
 
 ## Project Details
